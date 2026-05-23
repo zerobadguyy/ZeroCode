@@ -115,6 +115,7 @@
   top: 194px;
   display: grid;
   gap: 14px;
+  overflow: hidden;
   pointer-events: none;
   user-select: none;
 }
@@ -123,9 +124,19 @@
   font-family: "Bungee Outline", cursive;
   font-size: 76px;
   line-height: 0.88;
+  display: inline-block;
+  width: max-content;
   white-space: nowrap;
   color: transparent;
   -webkit-text-stroke: 1.2px rgba(17, 17, 17, 0.45);
+}
+
+#ZeroTube .zt-outline-line:nth-child(odd) {
+  animation: zt-outline-left 22s linear infinite;
+}
+
+#ZeroTube .zt-outline-line:nth-child(even) {
+  animation: zt-outline-right 26s linear infinite;
 }
 
 #ZeroTube .zt-left-portrait {
@@ -429,6 +440,8 @@
   overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   cursor: grab;
 }
 
@@ -477,6 +490,9 @@
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  cursor: grab;
 }
 
 #ZeroTube .zt-disc-track {
@@ -484,6 +500,15 @@
   gap: 12px;
   width: max-content;
   padding-bottom: 4px;
+  animation: zt-disc-marquee 26s linear infinite;
+}
+
+#ZeroTube .zt-disc-wrap:hover .zt-disc-track {
+  animation-play-state: paused;
+}
+
+#ZeroTube .zt-disc-wrap:active {
+  cursor: grabbing;
 }
 
 #ZeroTube .zt-disc-card {
@@ -491,6 +516,10 @@
   text-decoration: none;
   color: inherit;
   transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+#ZeroTube .zt-disc-card:hover {
+  transform: translateY(-3px) scale(1.04);
 }
 
 #ZeroTube .zt-disc-thumb {
@@ -536,7 +565,7 @@
 #ZeroTube .zt-favorite-list {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 58px;
+  grid-template-columns: minmax(0, 1fr) 64px;
   gap: 14px 12px;
   align-items: center;
 }
@@ -580,13 +609,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 74px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.45);
-  box-shadow: inset 0 0 0 2px rgba(17, 17, 17, 0.85);
+  justify-self: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #000000;
   background-image: var(--zt-play-card-icon);
-  background-size: 18px 18px;
+  background-size: 22px 22px;
   background-repeat: no-repeat;
   background-position: center;
   transition: transform 0.18s ease, filter 0.18s ease;
@@ -705,10 +734,12 @@
 }
 
 #ZeroTube .zt-player-control.is-main {
-  height: 54px;
-  border-radius: 18px;
+  width: 62px;
+  height: 62px;
+  justify-self: center;
+  border-radius: 50%;
   background-color: #000000;
-  background-size: 22px 22px;
+  background-size: 24px 24px;
 }
 
 #ZeroTube .zt-about-title {
@@ -767,6 +798,36 @@
   }
 }
 
+@keyframes zt-disc-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-32%);
+  }
+}
+
+@keyframes zt-outline-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-18%);
+  }
+}
+
+@keyframes zt-outline-right {
+  from {
+    transform: translateX(-12%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 1920px) {
   #ZeroTube {
     --zt-width: 1660px;
@@ -816,6 +877,339 @@
   #ZeroTube iframe.zt-video-embed {
     min-height: 300px;
     height: 300px;
+  }
+}
+
+@media (max-width: 1280px) {
+  #ZeroTube {
+    --zt-width: 980px;
+    --zt-left-width: 190px;
+    --zt-right-width: 190px;
+    --zt-gap: 14px;
+    --zt-card-height: 438px;
+  }
+
+  #ZeroTube .zt-left-card,
+  #ZeroTube .zt-main-panel,
+  #ZeroTube .zt-right-card {
+    min-height: var(--zt-card-height);
+  }
+
+  #ZeroTube .zt-left-card {
+    padding: 20px 14px 0;
+  }
+
+  #ZeroTube .zt-left-heading {
+    font-size: 24px;
+    line-height: 1.02;
+  }
+
+  #ZeroTube .zt-outline-stack {
+    top: 102px;
+    left: -8px;
+    right: -10px;
+    gap: 8px;
+  }
+
+  #ZeroTube .zt-outline-line {
+    font-size: 48px;
+    -webkit-text-stroke: 1px rgba(17, 17, 17, 0.45);
+  }
+
+  #ZeroTube .zt-left-portrait {
+    height: 320px;
+  }
+
+  #ZeroTube .zt-contact-pill {
+    left: 10px;
+    bottom: 78px;
+    min-width: 92px;
+    min-height: 34px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  #ZeroTube .zt-link-stack {
+    left: 10px;
+    bottom: 10px;
+    gap: 8px;
+  }
+
+  #ZeroTube .zt-side-link {
+    width: 106px;
+    height: 28px;
+    gap: 6px;
+    padding: 4px 8px;
+  }
+
+  #ZeroTube .zt-side-link-icon {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+    border-radius: 8px;
+    background-size: 12px 12px;
+  }
+
+  #ZeroTube .zt-side-link-text {
+    font-size: 10px;
+  }
+
+  #ZeroTube .zt-main-panel {
+    padding: 14px 16px 14px;
+  }
+
+  #ZeroTube .zt-main-top {
+    grid-template-columns: 94px minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  #ZeroTube .zt-brand {
+    font-size: 13px;
+  }
+
+  #ZeroTube .zt-search {
+    height: 18px;
+  }
+
+  #ZeroTube .zt-search-input {
+    padding: 0 10px 0 24px;
+    border-width: 1px;
+    font-size: 9px;
+  }
+
+  #ZeroTube .zt-search-icon {
+    left: 8px;
+    width: 10px;
+    height: 10px;
+  }
+
+  #ZeroTube .zt-main-actions {
+    gap: 6px;
+  }
+
+  #ZeroTube .zt-icon-btn {
+    width: 10px;
+    height: 10px;
+  }
+
+  #ZeroTube .zt-avatar-small {
+    width: 18px;
+    height: 18px;
+  }
+
+  #ZeroTube .zt-main-grid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(160px, 0.9fr);
+    gap: 14px;
+    margin-top: 10px;
+  }
+
+  #ZeroTube .zt-video-frame {
+    border-radius: 16px;
+  }
+
+  #ZeroTube .zt-video-embed,
+  #ZeroTube iframe.zt-video-embed {
+    min-height: 168px;
+    height: 168px;
+  }
+
+  #ZeroTube .zt-video-title {
+    margin-top: 6px;
+    font-size: 11px;
+  }
+
+  #ZeroTube .zt-meta-row {
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  #ZeroTube .zt-channel {
+    gap: 5px;
+  }
+
+  #ZeroTube .zt-channel-avatar {
+    width: 22px;
+    height: 22px;
+  }
+
+  #ZeroTube .zt-channel-name {
+    font-size: 9px;
+  }
+
+  #ZeroTube .zt-channel-sub {
+    font-size: 6px;
+  }
+
+  #ZeroTube .zt-pill-btn {
+    min-height: 16px;
+    padding: 0 6px;
+    gap: 3px;
+    font-size: 6px;
+  }
+
+  #ZeroTube .zt-icon-btn-inline {
+    width: 7px;
+    height: 7px;
+  }
+
+  #ZeroTube .zt-info-box {
+    margin-top: 8px;
+    height: 92px;
+    padding: 10px 10px 12px;
+    font-size: 6px;
+    border-radius: 10px;
+  }
+
+  #ZeroTube .zt-section-title {
+    font-size: 26px;
+    letter-spacing: -0.5px;
+  }
+
+  #ZeroTube .zt-filters {
+    margin-top: 6px;
+  }
+
+  #ZeroTube .zt-filter-list {
+    gap: 4px;
+  }
+
+  #ZeroTube .zt-filter-label {
+    padding: 2px 5px;
+    border-width: 1px;
+    font-size: 6px;
+  }
+
+  #ZeroTube .zt-disc-wrap {
+    margin-top: 6px;
+  }
+
+  #ZeroTube .zt-disc-track {
+    gap: 6px;
+  }
+
+  #ZeroTube .zt-disc-card {
+    flex-basis: 60px;
+  }
+
+  #ZeroTube .zt-disc-thumb {
+    border-radius: 8px;
+  }
+
+  #ZeroTube .zt-disc-title {
+    margin-top: 4px;
+    font-size: 7px;
+  }
+
+  #ZeroTube .zt-disc-sub {
+    font-size: 5px;
+  }
+
+  #ZeroTube .zt-favorite-title {
+    margin-top: 2px;
+    font-size: 18px;
+  }
+
+  #ZeroTube .zt-favorite-list {
+    margin-top: 8px;
+    grid-template-columns: minmax(0, 1fr) 22px;
+    gap: 6px 6px;
+  }
+
+  #ZeroTube .zt-favorite-song {
+    gap: 6px;
+  }
+
+  #ZeroTube .zt-favorite-cover {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+    border-radius: 10px;
+  }
+
+  #ZeroTube .zt-favorite-name {
+    font-size: 7px;
+  }
+
+  #ZeroTube .zt-favorite-artist {
+    margin-top: 1px;
+    font-size: 4px;
+  }
+
+  #ZeroTube .zt-fav-play {
+    width: 20px;
+    height: 20px;
+    background-size: 9px 9px;
+  }
+
+  #ZeroTube .zt-right-card {
+    padding: 10px 10px 12px;
+  }
+
+  #ZeroTube .zt-playing-title {
+    font-size: 10px;
+  }
+
+  #ZeroTube .zt-playing-actions {
+    gap: 5px;
+  }
+
+  #ZeroTube .zt-playing-cover {
+    margin-top: 8px;
+    border-radius: 12px;
+  }
+
+  #ZeroTube .zt-playing-song {
+    margin-top: 8px;
+    font-size: 10px;
+  }
+
+  #ZeroTube .zt-playing-artist {
+    font-size: 5px;
+  }
+
+  #ZeroTube .zt-time-row {
+    margin-top: 8px;
+    grid-template-columns: 22px minmax(0, 1fr) 22px;
+    gap: 5px;
+    font-size: 6px;
+  }
+
+  #ZeroTube .zt-bars {
+    height: 12px;
+    gap: 2px;
+  }
+
+  #ZeroTube .zt-bars span {
+    width: 2px;
+  }
+
+  #ZeroTube .zt-player-controls {
+    margin-top: 8px;
+    gap: 4px;
+  }
+
+  #ZeroTube .zt-player-control {
+    height: 16px;
+    background-size: 8px 8px;
+  }
+
+  #ZeroTube .zt-player-control.is-main {
+    width: 22px;
+    height: 22px;
+    background-size: 9px 9px;
+  }
+
+  #ZeroTube .zt-about-title {
+    margin-top: 8px;
+    font-size: 7px;
+  }
+
+  #ZeroTube .zt-about-box {
+    margin-top: 5px;
+    height: 71px;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 5px;
   }
 }
 
