@@ -2,6 +2,9 @@
 
 #ZeroTube {
   --zt-width: 1180px;
+  --zt-col-left: 0.78fr;
+  --zt-col-middle: 1.78fr;
+  --zt-col-right: 0.78fr;
   --zt-panel: #e4e4e4;
   --zt-text: #111111;
   --zt-soft: #767676;
@@ -17,6 +20,13 @@
   --zt-left-portrait-position: center bottom;
   --zt-right-cover-size: cover;
   --zt-right-cover-position: center;
+  --zt-info-box-height: 170px;
+  --zt-about-box-height: 110px;
+  --zt-about-box-font-size: 8px;
+  --zt-about-title-size: 13px;
+  --zt-favorite-title-size: 36px;
+  --zt-section-title-size: 52px;
+  --zt-stop-image: url("https://iili.io/CHNmzzX.png");
 
   --zt-search-icon: url("https://iili.io/CHNmobt.png");
   --zt-bell-icon: url("https://iili.io/CHNmAqG.png");
@@ -69,7 +79,7 @@
 
 #ZeroTube .zt-layout {
   display: grid;
-  grid-template-columns: 0.78fr 1.78fr 0.78fr;
+  grid-template-columns: var(--zt-col-left) var(--zt-col-middle) var(--zt-col-right);
   gap: var(--zt-gap);
   align-items: start;
 }
@@ -387,7 +397,7 @@
 
 #ZeroTube .zt-info-box {
   margin-top: 10px;
-  height: 170px;
+  height: var(--zt-info-box-height);
   overflow-y: auto;
   padding: 14px;
   border-radius: 12px;
@@ -405,7 +415,7 @@
 }
 
 #ZeroTube .zt-section-title {
-  font-size: 52px;
+  font-size: var(--zt-section-title-size);
   line-height: 0.93;
   font-weight: 800;
   letter-spacing: -0.8px;
@@ -538,7 +548,7 @@
 
 #ZeroTube .zt-favorite-title {
   margin-top: 6px;
-  font-size: 36px;
+  font-size: var(--zt-favorite-title-size);
   line-height: 0.95;
   font-weight: 800;
 }
@@ -774,6 +784,13 @@
   height: 22px;
 }
 
+#ZeroTube .zt-player-control-image {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
 #ZeroTube .zt-player-control:hover {
   transform: translateY(-1px) scale(1.04);
 }
@@ -784,20 +801,20 @@
 
 #ZeroTube .zt-about-title {
   margin-top: 10px;
-  font-size: 13px;
+  font-size: var(--zt-about-title-size);
   line-height: 1.1;
   font-weight: 700;
 }
 
 #ZeroTube .zt-about-box {
   margin-top: 6px;
-  height: 110px;
+  height: var(--zt-about-box-height);
   overflow-y: auto;
   padding: 12px;
   border-radius: 12px;
   background: var(--zt-dark);
   color: #ffffff;
-  font-size: 8px;
+  font-size: var(--zt-about-box-font-size);
   line-height: 1.5;
 }
 
