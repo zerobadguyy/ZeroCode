@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Bungee+Outline&display=swap");
 
 #ZeroTube {
-  --zt-width: 1180px;
+  --zt-width: 1120px;
   --zt-col-left: 0.78fr;
   --zt-col-middle: 1.78fr;
   --zt-col-right: 0.78fr;
@@ -10,8 +10,8 @@
   --zt-soft: #767676;
   --zt-dark: #2f2f2f;
   --zt-stroke: #111111;
-  --zt-gap: 20px;
-  --zt-card-height: 560px;
+  --zt-gap: clamp(14px, 1.5vw, 20px);
+  --zt-card-height: clamp(500px, 47vw, 540px);
   --zt-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   --zt-radius-xl: 24px;
   --zt-radius-lg: 18px;
@@ -20,12 +20,12 @@
   --zt-left-portrait-position: center bottom;
   --zt-right-cover-size: cover;
   --zt-right-cover-position: center;
-  --zt-info-box-height: 148px;
-  --zt-about-box-height: 110px;
-  --zt-about-box-font-size: 8px;
-  --zt-about-title-size: 13px;
-  --zt-favorite-title-size: 36px;
-  --zt-section-title-size: 52px;
+  --zt-info-box-height: clamp(118px, 12vw, 132px);
+  --zt-about-box-height: clamp(90px, 9vw, 98px);
+  --zt-about-box-font-size: clamp(7px, 0.68vw, 8px);
+  --zt-about-title-size: clamp(11px, 1vw, 13px);
+  --zt-favorite-title-size: clamp(28px, 2.5vw, 34px);
+  --zt-section-title-size: clamp(40px, 3.4vw, 48px);
 
   --zt-search-icon: url("https://iili.io/CHNmobt.png");
   --zt-bell-icon: url("https://iili.io/CHNmAqG.png");
@@ -341,7 +341,7 @@
 
 #ZeroTube .zt-main-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.34fr) minmax(250px, 1fr);
+  grid-template-columns: minmax(0, 1.32fr) minmax(220px, 0.96fr);
   gap: 12px;
   margin-top: 14px;
   align-items: start;
@@ -358,18 +358,18 @@
 #ZeroTube .zt-video-embed {
   display: block;
   width: 100%;
-  min-height: 248px;
+  min-height: clamp(214px, 22vw, 238px);
   border: 0;
   background: #19364d;
 }
 
 #ZeroTube iframe.zt-video-embed {
-  height: 248px;
+  height: clamp(214px, 22vw, 238px);
 }
 
 #ZeroTube .zt-video-title {
   margin-top: 8px;
-  font-size: 16px;
+  font-size: clamp(14px, 1.25vw, 16px);
   line-height: 1.08;
   font-weight: 700;
 }
@@ -390,8 +390,8 @@
 }
 
 #ZeroTube .zt-channel-avatar {
-  width: 36px;
-  height: 36px;
+  width: clamp(30px, 2.8vw, 36px);
+  height: clamp(30px, 2.8vw, 36px);
   border-radius: 50%;
   background-image: var(--zt-channel-avatar, url("https://iili.io/Bi2aHB4.png"));
   background-size: cover;
@@ -400,14 +400,14 @@
 }
 
 #ZeroTube .zt-channel-name {
-  font-size: 13px;
+  font-size: clamp(11px, 1vw, 13px);
   line-height: 1;
   font-weight: 700;
 }
 
 #ZeroTube .zt-channel-sub {
   margin-top: 1px;
-  font-size: 8px;
+  font-size: clamp(7px, 0.68vw, 8px);
   line-height: 1.2;
   color: var(--zt-soft);
 }
@@ -422,7 +422,7 @@
   border-radius: 999px;
   background: #000000;
   color: #ffffff;
-  font: 600 9px/1 "Kanit", sans-serif;
+  font: 600 clamp(8px, 0.78vw, 9px)/1 "Kanit", sans-serif;
   transition: transform 0.15s ease, filter 0.15s ease;
 }
 
@@ -571,7 +571,7 @@
 
 #ZeroTube .zt-disc-title {
   margin-top: 5px;
-  font-size: 11px;
+  font-size: clamp(9px, 0.95vw, 11px);
   line-height: 1.06;
   font-weight: 700;
 }
@@ -579,7 +579,7 @@
 #ZeroTube .zt-disc-sub {
   margin-top: 2px;
   color: var(--zt-soft);
-  font-size: 7px;
+  font-size: clamp(6px, 0.6vw, 7px);
   line-height: 1.2;
 }
 
@@ -642,7 +642,7 @@
 }
 
 #ZeroTube .zt-favorite-name {
-  font-size: 13px;
+  font-size: clamp(11px, 1vw, 13px);
   line-height: 1.06;
   font-weight: 700;
 }
@@ -650,7 +650,7 @@
 #ZeroTube .zt-favorite-artist {
   margin-top: 2px;
   color: var(--zt-soft);
-  font-size: 9px;
+  font-size: clamp(7px, 0.74vw, 9px);
   line-height: 1.2;
 }
 
@@ -699,7 +699,7 @@
 }
 
 #ZeroTube .zt-playing-title {
-  font-size: 22px;
+  font-size: clamp(18px, 1.7vw, 22px);
   line-height: 1;
   font-weight: 700;
 }
@@ -723,14 +723,14 @@
 
 #ZeroTube .zt-playing-song {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: clamp(15px, 1.35vw, 18px);
   line-height: 1.08;
   font-weight: 700;
 }
 
 #ZeroTube .zt-playing-artist {
   margin-top: 2px;
-  font-size: 10px;
+  font-size: clamp(8px, 0.8vw, 10px);
   color: var(--zt-soft);
 }
 
@@ -739,7 +739,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 8px;
+  font-size: clamp(7px, 0.7vw, 8px);
   line-height: 1;
   font-weight: 700;
 }
@@ -889,30 +889,31 @@
 @media (min-width: 1500px) {
   #ZeroTube {
     --zt-width: 1240px;
-    --zt-gap: 20px;
     --zt-card-height: 560px;
   }
 
   #ZeroTube .zt-left-card,
   #ZeroTube .zt-main-panel,
   #ZeroTube .zt-right-card {
-    min-height: var(--zt-card-height);
+    height: var(--zt-card-height);
   }
+}
 
-  #ZeroTube .zt-left-heading {
-    font-size: 33px;
-  }
-
-  #ZeroTube .zt-section-title {
-    font-size: 40px;
-  }
-
-  #ZeroTube .zt-favorite-title {
-    font-size: 30px;
+@media (max-width: 1180px) {
+  #ZeroTube {
+    --zt-width: 100%;
+    --zt-col-left: 0.76fr;
+    --zt-col-middle: 1.7fr;
+    --zt-col-right: 0.8fr;
   }
 }
 
 @media (max-width: 980px) {
+  #ZeroTube {
+    --zt-card-height: auto;
+    --zt-gap: 14px;
+  }
+
   #ZeroTube .zt-layout {
     grid-template-columns: 1fr;
   }
@@ -920,10 +921,51 @@
   #ZeroTube .zt-left-card,
   #ZeroTube .zt-main-panel,
   #ZeroTube .zt-right-card {
-    min-height: 0;
+    height: auto;
   }
 
   #ZeroTube .zt-main-grid {
     grid-template-columns: 1fr;
+  }
+
+  #ZeroTube .zt-left-card {
+    min-height: 500px;
+  }
+
+  #ZeroTube .zt-right-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  #ZeroTube {
+    --zt-gap: 12px;
+    --zt-favorite-title-size: 26px;
+    --zt-section-title-size: 34px;
+  }
+
+  #ZeroTube .zt-main-panel {
+    padding: 14px;
+  }
+
+  #ZeroTube .zt-left-card,
+  #ZeroTube .zt-right-card {
+    min-height: 0;
+  }
+
+  #ZeroTube .zt-left-heading {
+    font-size: 28px;
+  }
+
+  #ZeroTube .zt-outline-line {
+    font-size: 54px;
+  }
+
+  #ZeroTube .zt-outline-stack .zt-outline-line:nth-child(3) {
+    font-size: 42px;
+  }
+
+  #ZeroTube .zt-contact-pill {
+    bottom: 94px;
   }
 }
