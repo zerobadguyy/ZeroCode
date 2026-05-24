@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Bungee+Outline&display=swap");
 
 #ZeroTube {
-  --zt-width: 1120px;
+  --zt-width: 1040px;
   --zt-col-left: 0.78fr;
   --zt-col-middle: 1.78fr;
   --zt-col-right: 0.78fr;
@@ -10,8 +10,8 @@
   --zt-soft: #767676;
   --zt-dark: #2f2f2f;
   --zt-stroke: #111111;
-  --zt-gap: clamp(14px, 1.5vw, 20px);
-  --zt-card-height: clamp(500px, 47vw, 540px);
+  --zt-gap: clamp(12px, 1.25vw, 18px);
+  --zt-card-height: clamp(470px, 43vw, 505px);
   --zt-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   --zt-radius-xl: 24px;
   --zt-radius-lg: 18px;
@@ -20,12 +20,12 @@
   --zt-left-portrait-position: center bottom;
   --zt-right-cover-size: cover;
   --zt-right-cover-position: center;
-  --zt-info-box-height: clamp(118px, 12vw, 100px);
-  --zt-about-box-height: clamp(90px, 9vw, 98px);
-  --zt-about-box-font-size: clamp(7px, 0.68vw, 8px);
-  --zt-about-title-size: clamp(11px, 1vw, 13px);
-  --zt-favorite-title-size: clamp(28px, 2.5vw, 34px);
-  --zt-section-title-size: clamp(40px, 3.4vw, 48px);
+  --zt-info-box-height: clamp(104px, 10vw, 118px);
+  --zt-about-box-height: clamp(82px, 7.8vw, 90px);
+  --zt-about-box-font-size: clamp(6px, 0.6vw, 7px);
+  --zt-about-title-size: clamp(10px, 0.9vw, 12px);
+  --zt-favorite-title-size: clamp(24px, 2.2vw, 30px);
+  --zt-section-title-size: clamp(34px, 3vw, 42px);
 
   --zt-search-icon: url("https://iili.io/CHNmobt.png");
   --zt-bell-icon: url("https://iili.io/CHNmAqG.png");
