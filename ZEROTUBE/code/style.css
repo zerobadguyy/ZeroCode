@@ -476,9 +476,6 @@
   overflow: visible !important;
   overflow-y: hidden;
   padding-bottom: 0px;
-  cursor: default;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 #ZeroTube .zt-filters::-webkit-scrollbar {
