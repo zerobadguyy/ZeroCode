@@ -20,7 +20,7 @@
   --zt-left-portrait-position: center bottom;
   --zt-right-cover-size: cover;
   --zt-right-cover-position: center;
-  --zt-info-box-height: clamp(118px, 12vw, 132px);
+  --zt-info-box-height: clamp(118px, 12vw, 100px);
   --zt-about-box-height: clamp(90px, 9vw, 98px);
   --zt-about-box-font-size: clamp(7px, 0.68vw, 8px);
   --zt-about-title-size: clamp(11px, 1vw, 13px);
