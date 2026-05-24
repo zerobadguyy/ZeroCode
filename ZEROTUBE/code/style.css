@@ -378,7 +378,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 3px;
+  gap: 1px;
   margin-top: 12px;
 }
 
@@ -596,7 +596,7 @@
 
 #ZeroTube .zt-favorite-title {
   margin-top: 0;
-  font-size: 22px !important;
+  font-size: 26px !important;
   line-height: 0.95;
   font-weight: 800;
 }
@@ -605,7 +605,7 @@
   margin-top: 10px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 46px;
-  gap: 6px 10px;
+  gap: 8px 10px;
   align-items: center;
 }
 
@@ -630,8 +630,8 @@
 }
 
 #ZeroTube .zt-favorite-cover {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   flex: 0 0 40px;
   border-radius: 8px;
   background-image: var(--img);
@@ -645,7 +645,7 @@
 }
 
 #ZeroTube .zt-favorite-name {
-  font-size: 14px !important;
+  font-size: 15px !important;
   line-height: 1.06;
   font-weight: 700;
 }
@@ -653,7 +653,7 @@
 #ZeroTube .zt-favorite-artist {
 margin-top: 2px;
   color: var(--zt-soft);
-  font-size: 11px !important;  
+  font-size: 12px !important;  
   line-height: 1.2;
 }
 
