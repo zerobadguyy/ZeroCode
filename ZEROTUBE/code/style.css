@@ -659,6 +659,41 @@ margin-top: 2px;
   line-height: 1.2;
 }
 
+#ZeroTube .zt-fav-heart {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  border: 0;
+  background: transparent; 
+  padding: 0;
+  position: relative;
+  outline: none;
+  transition: transform 0.15s ease;
+}
+
+#ZeroTube .zt-fav-heart-icon {
+  display: block !important;
+  width: 22px !important; 
+  height: 22px !important;
+  background-image: var(--zt-heart-icon) !important; 
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  transition: filter 0.15s ease;
+}
+
+#ZeroTube .zt-fav-heart:hover {
+  transform: scale(1.18);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+}
+
+#ZeroTube .zt-fav-heart:active {
+  transform: scale(0.9);
+}
+
 #ZeroTube .zt-right-card {
   padding: 18px 16px 18px;
   max-width: 100%;
