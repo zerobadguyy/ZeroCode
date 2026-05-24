@@ -225,10 +225,8 @@
 #ZeroTube .zt-side-link:hover::before {
   right: 0;
 }
-
-#ZeroTube .zt-side-link--discord::before {
-  background: #5865f2;
-}
+#ZeroTube .zt-side-link:has(.zt-discord-icon-marker)::before { background: #5865F2; } /* ดีสคอร์ดใช้สีน้ำเงินแบรนด์ */
+#ZeroTube .zt-side-link:not(html)::before { background: #5a5a5a; } /* ทั่วไปใช้สีเทาเข้มพรีเมียม */
 
 #ZeroTube .zt-side-link:active {
   transform: scale(0.94);
