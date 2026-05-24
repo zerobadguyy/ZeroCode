@@ -676,12 +676,13 @@ margin-top: 2px;
 }
 
 #ZeroTube .zt-fav-play-icon {
-  width: 18px;
-  height: 18px;
+  display: block !important;
+  width: 18px !important; 
+  height: 18px !important;
   background-image: url('https://iili.io/CHNmR1f.png') !important;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 #ZeroTube .zt-fav-play:hover {
