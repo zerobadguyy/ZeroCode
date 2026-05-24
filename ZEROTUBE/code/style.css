@@ -716,7 +716,7 @@ margin-top: 2px;
 #ZeroTube .zt-playing-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
 }
 
 #ZeroTube .zt-playing-cover {
@@ -747,8 +747,8 @@ margin-top: 2px;
   margin-top: 10px;
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: clamp(7px, 0.7vw, 8px);
+  gap: 12px;
+  font-size: clamp(11px, 1vw, 13px);
   line-height: 1;
   font-weight: 700;
 }
@@ -762,7 +762,7 @@ margin-top: 2px;
 }
 
 #ZeroTube .zt-bars {
-  flex: 1;
+  flex: 0 0 auto !important;
   display: flex;
   align-items: center;
   justify-content: center;
