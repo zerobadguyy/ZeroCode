@@ -26,7 +26,6 @@
   --zt-about-title-size: 13px;
   --zt-favorite-title-size: 36px;
   --zt-section-title-size: 52px;
-  --zt-stop-image: url("https://iili.io/CHNmzzX.png");
 
   --zt-search-icon: url("https://iili.io/CHNmobt.png");
   --zt-bell-icon: url("https://iili.io/CHNmAqG.png");
@@ -36,7 +35,6 @@
   --zt-dots-icon: url("https://iili.io/CHNmneI.png");
   --zt-shuffle-icon: url("https://iili.io/CHNmdWg.png");
   --zt-prev-icon: url("https://iili.io/CHNm2sa.png");
-  --zt-stop-icon: url("https://iili.io/CHNmzzX.png");
   --zt-next-icon: url("https://iili.io/CHNmIXn.png");
   --zt-repeat-icon: url("https://iili.io/CHNmJzF.png");
   --zt-play-card-icon: url("https://iili.io/CHNmR1f.png");
@@ -75,6 +73,7 @@
 #ZeroTube .zt-root {
   padding: 0;
   background: transparent;
+  max-width: 100%;
 }
 
 #ZeroTube .zt-layout {
@@ -82,6 +81,14 @@
   grid-template-columns: var(--zt-col-left) var(--zt-col-middle) var(--zt-col-right);
   gap: var(--zt-gap);
   align-items: start;
+  max-width: 100%;
+}
+
+#ZeroTube .zt-left,
+#ZeroTube .zt-middle,
+#ZeroTube .zt-right {
+  min-width: 0;
+  max-width: 100%;
 }
 
 #ZeroTube .zt-left-card,
@@ -131,6 +138,14 @@
   -webkit-text-stroke: 1.1px rgba(17, 17, 17, 0.46);
 }
 
+#ZeroTube .zt-outline-stack .zt-outline-line:nth-child(3) {
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-size: 56px;
+  color: rgba(17, 17, 17, 0.08);
+  -webkit-text-stroke: 0px;
+}
+
 #ZeroTube .zt-outline-line:nth-child(odd) {
   animation: zt-outline-left 12s linear infinite;
 }
@@ -154,19 +169,19 @@
 #ZeroTube .zt-contact-pill {
   position: absolute;
   left: 14px;
-  bottom: 88px;
+  bottom: 102px;
   z-index: 3;
   min-width: 110px;
-  min-height: 42px;
+  min-height: 36px;
   padding: 0 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--zt-stroke);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-  font-size: 16px;
-  font-weight: 500;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 #ZeroTube .zt-link-stack {
@@ -182,20 +197,41 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  width: 124px;
+  gap: 8px;
+  width: 130px;
   height: 36px;
-  padding: 4px 10px 4px 8px;
+  padding: 4px 12px;
   border-radius: 999px;
   background: #000000;
   color: #ffffff;
   text-decoration: none;
   overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease;
+  z-index: 1;
+}
+
+#ZeroTube .zt-side-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background: #5a5a5a;
+  transition: right 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: -1;
+}
+
+#ZeroTube .zt-side-link:hover::before {
+  right: 0;
+}
+
+#ZeroTube .zt-side-link--discord::before {
+  background: #5865f2;
 }
 
 #ZeroTube .zt-side-link:active {
-  transform: translateY(1px) scale(0.96);
+  transform: scale(0.94);
 }
 
 #ZeroTube .zt-side-link-icon {
@@ -208,6 +244,8 @@
   background-size: 12px 12px;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  z-index: 2;
 }
 
 #ZeroTube .zt-side-link-text {
@@ -642,6 +680,7 @@
 
 #ZeroTube .zt-right-card {
   padding: 18px 16px 18px;
+  max-width: 100%;
 }
 
 #ZeroTube .zt-playing-head {
@@ -816,10 +855,6 @@
   color: #ffffff;
   font-size: var(--zt-about-box-font-size);
   line-height: 1.5;
-}
-
-#ZeroTube .zt-floating-text {
-  display: none;
 }
 
 @keyframes zt-bars {
