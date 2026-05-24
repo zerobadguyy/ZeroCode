@@ -593,7 +593,7 @@
 
 #ZeroTube .zt-favorite-title {
   margin-top: 0;
-  font-size: var(--zt-favorite-title-size);
+  font-size: 22px !important;
   line-height: 0.95;
   font-weight: 800;
 }
@@ -602,7 +602,7 @@
   margin-top: 10px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 46px;
-  gap: 14px 10px;
+  gap: 8px 10px;
   align-items: center;
 }
 
@@ -610,7 +610,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 54px;
+  min-height: 42px;
   padding: 2px 0;
   min-width: 0;
   text-decoration: none;
@@ -627,10 +627,10 @@
 }
 
 #ZeroTube .zt-favorite-cover {
-  width: 52px;
-  height: 52px;
-  flex: 0 0 52px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 8px;
   background-image: var(--img);
   background-size: cover;
   background-position: center;
@@ -642,21 +642,21 @@
 }
 
 #ZeroTube .zt-favorite-name {
-  font-size: clamp(11px, 1vw, 13px);
+  font-size: 12px !important;
   line-height: 1.06;
   font-weight: 700;
 }
 
 #ZeroTube .zt-favorite-artist {
-  margin-top: 2px;
+margin-top: 2px;
   color: var(--zt-soft);
-  font-size: clamp(7px, 0.74vw, 9px);
+  font-size: 9px !important;  
   line-height: 1.2;
 }
 
 #ZeroTube .zt-fav-play {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -664,7 +664,7 @@
   border-radius: 50%;
   background: #000000;
   text-decoration: none;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
   transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
 }
 
