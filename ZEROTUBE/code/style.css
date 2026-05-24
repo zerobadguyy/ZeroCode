@@ -825,11 +825,12 @@ margin-top: 2px;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 6px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 #ZeroTube .zt-player-control {
   width: 100%;
-  height: 28px;
+  height: 34px;
   border: 0;
   border-radius: 12px;
   background: transparent;
@@ -841,8 +842,8 @@ margin-top: 2px;
 
 #ZeroTube .zt-player-control-icon {
   display: block;
-  width: 23px !important;  
-  height: 23px !important;
+  width: 24px !important;  
+  height: 24px !important;
   background-image: var(--icon);
   background-size: contain;
   background-repeat: no-repeat;
@@ -864,8 +865,8 @@ margin-top: 2px;
 }
 
 #ZeroTube .zt-player-control.is-main .zt-player-control-icon {
-  width: 28px !important; 
-  height: 28px !important;
+  width: 32px !important; 
+  height: 32px !important;
 }
 
 #ZeroTube .zt-player-control:hover {
@@ -877,10 +878,11 @@ margin-top: 2px;
 }
 
 #ZeroTube .zt-about-title {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: var(--zt-about-title-size);
   line-height: 1.1;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 #ZeroTube .zt-about-box {
@@ -893,6 +895,8 @@ margin-top: 2px;
   color: #ffffff;
   font-size: var(--zt-about-box-font-size);
   line-height: 1.5;
+  flex: 1;
+  min-height: 65px;
 }
 
 @keyframes zt-bars {
