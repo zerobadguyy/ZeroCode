@@ -716,7 +716,7 @@ margin-top: 2px;
 #ZeroTube .zt-playing-actions {
   display: flex;
   align-items: center;
-  gap: 1px;
+  gap: 0px;
 }
 
 #ZeroTube .zt-playing-cover {
@@ -841,8 +841,8 @@ margin-top: 2px;
 
 #ZeroTube .zt-player-control-icon {
   display: block;
-  width: 19px !important;  
-  height: 19px !important;
+  width: 23px !important;  
+  height: 23px !important;
   background-image: var(--icon);
   background-size: contain;
   background-repeat: no-repeat;
@@ -850,8 +850,8 @@ margin-top: 2px;
 }
 
 #ZeroTube .zt-player-control.is-main {
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   justify-self: center;
   border-radius: 50%;
   border: 0;
