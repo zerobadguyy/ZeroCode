@@ -386,6 +386,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
+  margin-right: 4px;
 }
 
 #ZeroTube .zt-meta-row .zt-pill-btn:first-of-type {
