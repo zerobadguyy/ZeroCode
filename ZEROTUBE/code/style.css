@@ -796,27 +796,30 @@ margin-top: 2px;
 #ZeroTube .zt-bars span:nth-child(17) { height: 8px; }
 #ZeroTube .zt-bars span:nth-child(18) { height: 10px; }
 
+/* 1. คืนชีพกล่องนอก (ไม่ไปยุ่งกับ padding ของมันแล้ว จอจะได้ไม่แบนจ้า) */
 #ZeroTube .zt-player, 
 #ZeroTube .zt-video-container, 
 #ZeroTube .zt-video-wrapper,
 #ZeroTube .zt-video-box {
-  padding: 0 !important;           /* 🌟 ทุบช่องว่างทิ้ง! ดึงวิดีโอให้ขยายไปชนขอบกล่องสีน้ำเงินให้มิด */
-  overflow: hidden !important;      /* 🌟 พระเอกของงาน! สั่งตัดมุมเหลี่ยมของ YouTube ให้โค้งมนตามกล่องแม่ทันที */
-  position: relative !important;
+  position: relative !important;    /* ตั้งหลักให้วิดีโอข้างในอ้างอิง */
+  overflow: hidden !important;      /* 🌟 พระเอกดักตบขอบเหลี่ยม ให้ยอมโค้งมนตามกล่องนอก */
 }
 
-/* 2. จัดการตัว iframe (YouTube) ที่อยู่ข้างใน */
+/* 2. เสกให้วิดีโอ YouTube ลอยขึ้นมาแผ่แม่เบี้ยทับพื้นที่สีน้ำเงินให้มิด 100% */
 #ZeroTube .zt-player iframe, 
 #ZeroTube .zt-video-container iframe, 
 #ZeroTube .zt-video-wrapper iframe,
 #ZeroTube .zt-video-box iframe,
 #ZeroTube iframe {
+  position: absolute !important;    /* 🌟 ใช้การลอยตัวเพื่อทะลวงข้าม padding สีน้ำเงิน */
+  top: 0 !important;
+  left: 0 !important;
   width: 100% !important;
   height: 100% !important;
   border: 0 !important;
   display: block !important;
   
-  /* 🌟 ไม้ตายเสริม: สั่งให้ตัวมันเองยอมโค้งมนตามกล่องแม่ไปด้วยเลย! */
+  /* 🌟 สั่งให้ตัววิดีโอโค้งมนตามขอบกล่องนอกเป๊ะ ๆ */
   border-radius: inherit !important; 
 }
 
