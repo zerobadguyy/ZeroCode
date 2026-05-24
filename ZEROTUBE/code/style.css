@@ -796,6 +796,30 @@ margin-top: 2px;
 #ZeroTube .zt-bars span:nth-child(17) { height: 8px; }
 #ZeroTube .zt-bars span:nth-child(18) { height: 10px; }
 
+#ZeroTube .zt-player, 
+#ZeroTube .zt-video-container, 
+#ZeroTube .zt-video-wrapper,
+#ZeroTube .zt-video-box {
+  padding: 0 !important;           /* 🌟 ทุบช่องว่างทิ้ง! ดึงวิดีโอให้ขยายไปชนขอบกล่องสีน้ำเงินให้มิด */
+  overflow: hidden !important;      /* 🌟 พระเอกของงาน! สั่งตัดมุมเหลี่ยมของ YouTube ให้โค้งมนตามกล่องแม่ทันที */
+  position: relative !important;
+}
+
+/* 2. จัดการตัว iframe (YouTube) ที่อยู่ข้างใน */
+#ZeroTube .zt-player iframe, 
+#ZeroTube .zt-video-container iframe, 
+#ZeroTube .zt-video-wrapper iframe,
+#ZeroTube .zt-video-box iframe,
+#ZeroTube iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block !important;
+  
+  /* 🌟 ไม้ตายเสริม: สั่งให้ตัวมันเองยอมโค้งมนตามกล่องแม่ไปด้วยเลย! */
+  border-radius: inherit !important; 
+}
+
 #ZeroTube .zt-player-controls {
   margin-top: 10px;
   display: grid;
@@ -872,27 +896,6 @@ margin-top: 2px;
   color: #ffffff;
   font-size: var(--zt-about-box-font-size);
   line-height: 1.5;
-}
-
-#ZeroTube .zt-player,
-#ZeroTube .zt-video-container,
-#ZeroTube .zt-video-wrapper {
-  position: relative !important;
-  overflow: hidden;
-}
-
-/* 2. สั่งให้ตัววิดีโอ YouTube ข้างใน วิ่งไปกางปีกยึดพื้นที่เต็ม 4 มุมกล่องทันที */
-#ZeroTube .zt-player iframe,
-#ZeroTube .zt-video-container iframe,
-#ZeroTube .zt-video-wrapper iframe,
-#ZeroTube iframe {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  border: 0 !important;
-  display: block !important;
 }
 
 @keyframes zt-bars {
