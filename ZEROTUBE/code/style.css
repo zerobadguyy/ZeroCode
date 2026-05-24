@@ -596,7 +596,7 @@
 
 #ZeroTube .zt-favorite-title {
   margin-top: 0;
-  font-size: 26px !important;
+  font-size: 28px !important;
   line-height: 0.95;
   font-weight: 800;
 }
@@ -613,7 +613,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 50px;
+  min-height: 52px;
   padding: 2px 0;
   min-width: 0;
   text-decoration: none;
@@ -645,7 +645,7 @@
 }
 
 #ZeroTube .zt-favorite-name {
-  font-size: 15px !important;
+  font-size: 16px !important;
   line-height: 1.06;
   font-weight: 700;
 }
@@ -653,7 +653,7 @@
 #ZeroTube .zt-favorite-artist {
 margin-top: 2px;
   color: var(--zt-soft);
-  font-size: 12px !important;  
+  font-size: 13px !important;  
   line-height: 1.2;
 }
 
