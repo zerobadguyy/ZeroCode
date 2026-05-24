@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Bungee+Outline&display=swap");
 
 #ZeroTube {
-  --zt-width: 1180px;
+  --zt-width: 1040px;
   --zt-col-left: 0.78fr;
   --zt-col-middle: 1.78fr;
   --zt-col-right: 0.78fr;
@@ -10,8 +10,8 @@
   --zt-soft: #767676;
   --zt-dark: #2f2f2f;
   --zt-stroke: #111111;
-  --zt-gap: 20px;
-  --zt-card-height: 560px;
+  --zt-gap: clamp(12px, 1.25vw, 18px);
+  --zt-card-height: clamp(470px, 43vw, 505px);
   --zt-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   --zt-radius-xl: 24px;
   --zt-radius-lg: 18px;
@@ -20,13 +20,12 @@
   --zt-left-portrait-position: center bottom;
   --zt-right-cover-size: cover;
   --zt-right-cover-position: center;
-  --zt-info-box-height: 170px;
-  --zt-about-box-height: 110px;
-  --zt-about-box-font-size: 8px;
-  --zt-about-title-size: 13px;
-  --zt-favorite-title-size: 36px;
-  --zt-section-title-size: 52px;
-  --zt-stop-image: url("https://iili.io/CHNmzzX.png");
+  --zt-info-box-height: clamp(104px, 10vw, 118px);
+  --zt-about-box-height: clamp(82px, 7.8vw, 90px);
+  --zt-about-box-font-size: clamp(6px, 0.6vw, 7px);
+  --zt-about-title-size: clamp(10px, 0.9vw, 12px);
+  --zt-favorite-title-size: clamp(24px, 2.2vw, 30px);
+  --zt-section-title-size: clamp(34px, 3vw, 42px);
 
   --zt-search-icon: url("https://iili.io/CHNmobt.png");
   --zt-bell-icon: url("https://iili.io/CHNmAqG.png");
@@ -75,26 +74,34 @@
 #ZeroTube .zt-root {
   padding: 0;
   background: transparent;
+  max-width: 100%;
 }
 
 #ZeroTube .zt-layout {
   display: grid;
   grid-template-columns: var(--zt-col-left) var(--zt-col-middle) var(--zt-col-right);
   gap: var(--zt-gap);
-  align-items: start;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+#ZeroTube .zt-left,
+#ZeroTube .zt-middle,
+#ZeroTube .zt-right {
+  min-width: 0;
+  max-width: 100%;
 }
 
 #ZeroTube .zt-left-card,
 #ZeroTube .zt-main-panel,
 #ZeroTube .zt-right-card {
-  min-height: var(--zt-card-height);
+  height: var(--zt-card-height);
   border-radius: var(--zt-radius-xl);
   background: var(--zt-panel);
   box-shadow: var(--zt-shadow);
   overflow: hidden;
 }
 
-/* --- [กรอบสีแดง & โครงสร้างการ์ดซ้าย] --- */
 #ZeroTube .zt-left-card {
   position: relative;
   padding: 24px 18px 0;
@@ -109,7 +116,6 @@
   letter-spacing: -0.6px;
 }
 
-/* --- [กรอบสีม่วง] ข้อความวิ่งสลับฟันปลาความเร็วเหลื่อมกัน --- */
 #ZeroTube .zt-outline-stack {
   position: absolute;
   top: 128px;
@@ -134,7 +140,6 @@
   -webkit-text-stroke: 1.1px rgba(17, 17, 17, 0.18);
 }
 
-/* ตั้งค่าให้แถวกลาง (แถวที่ 3) เปลี่ยนเป็นฟอนต์ Kanit หนาตามบรีฟ */
 #ZeroTube .zt-outline-stack .zt-outline-line:nth-child(3) {
   font-family: "Kanit", sans-serif;
   font-weight: 800;
@@ -143,14 +148,12 @@
   -webkit-text-stroke: 0px;
 }
 
-/* สลับฟันปลาซ้ายขวาซ้ายและความเร็วเหลื่อมกัน */
 #ZeroTube .zt-outline-line:nth-child(1) { animation: zt-outline-left 14s linear infinite; }
 #ZeroTube .zt-outline-line:nth-child(2) { animation: zt-outline-right 16s linear infinite; }
 #ZeroTube .zt-outline-line:nth-child(3) { animation: zt-outline-left 12s linear infinite; }
 #ZeroTube .zt-outline-line:nth-child(4) { animation: zt-outline-right 15s linear infinite; }
 #ZeroTube .zt-outline-line:nth-child(5) { animation: zt-outline-left 17s linear infinite; }
 
-/* --- [กรอบสีเขียว] เปลี่ยนรูปผ่านโค้ดในเว็บบอร์ดได้เสรี --- */
 #ZeroTube .zt-left-portrait {
   position: absolute;
   left: 0;
@@ -191,7 +194,6 @@
   gap: 8px;
 }
 
-/* --- [กรอบสีเทา] ปุ่มลิงก์ Profile & Discord มีบาร์เลื่อนสไลด์จากขวาไปซ้ายเวลา Hover --- */
 #ZeroTube .zt-side-link {
   position: relative;
   display: inline-flex;
@@ -209,28 +211,31 @@
   z-index: 1;
 }
 
-/* เอฟเฟกต์บาร์สไลด์ยื่นออกมาจากฝั่งขวา */
+.zt-grey-target-link span {
+  position: relative;
+  z-index: 3;
+  margin-left: 36px;
+}
+
 #ZeroTube .zt-side-link::before {
   content: '';
   position: absolute;
-  top: 0;
   right: -100%;
+  top: 0;
   width: 100%;
   height: 100%;
   transition: right 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: -1;
+  z-index: 1;
 }
 
-/* แยกสีสันแอนิเมชันบาร์ตามรูปที่ส่งมา */
 #ZeroTube .zt-side-link:hover::before {
   right: 0;
 }
-#ZeroTube .zt-side-link:has(.zt-discord-icon-marker)::before { background: #5865F2; } /* ดีสคอร์ดใช้สีน้ำเงินแบรนด์ */
-#ZeroTube .zt-side-link:not(html)::before { background: #5a5a5a; } /* ทั่วไปใช้สีเทาเข้มพรีเมียม */
-
-#ZeroTube .zt-side-link:active {
-  transform: scale(0.94);
-}
+.btn-prof::after { content:''; position:absolute; left:6px; width:22px; height:22px; background: url('https://iili.io/CHNbmJV.png') no-repeat center/contain; z-index:2; }
+.btn-disc::after { content:''; position:absolute; left:6px; width:22px; height:22px; background: url('https://iili.io/CHNm9b1.png') no-repeat center/contain; z-index:2; }
+.btn-prof::before { background: #5a5a5a; }
+.btn-disc::before { background: #5865F2; }
+.zt-grey-target-link:hover::before { right: 0; }
 
 #ZeroTube .zt-side-link-icon {
   width: 20px;
@@ -255,6 +260,8 @@
 
 #ZeroTube .zt-main-panel {
   padding: 18px 20px 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 #ZeroTube .zt-main-top {
@@ -270,7 +277,6 @@
   font-weight: 800;
 }
 
-/* --- [กรอบสีฟ้า] ช่องค้นหาคลิกพิมพ์ข้อความได้เสมือนจริง --- */
 #ZeroTube .zt-search {
   position: relative;
   height: 30px;
@@ -285,7 +291,6 @@
   padding: 0 14px 0 36px;
   font: 400 12px/1 "Kanit", sans-serif;
   color: var(--zt-text);
-  outline: none;
 }
 
 #ZeroTube .zt-search-input::placeholder {
@@ -311,21 +316,20 @@
   gap: 8px;
 }
 
-/* --- [กรอบสีชมพู] ปุ่มกดเอฟเฟกต์ยุบตัวลงเมื่อคลิกใช้งานจริง --- */
 #ZeroTube .zt-icon-btn {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border: 0;
   background: transparent;
   background-image: var(--icon);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  transition: transform 0.1s ease;
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 #ZeroTube .zt-icon-btn:active {
-  transform: scale(0.85);
+  transform: translateY(1px) scale(0.92);
 }
 
 #ZeroTube .zt-avatar-small {
@@ -340,34 +344,36 @@
 
 #ZeroTube .zt-main-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.34fr) minmax(250px, 1fr);
-  gap: 20px;
+  grid-template-columns: minmax(0, 1.32fr) minmax(220px, 0.96fr);
+  gap: 12px;
   margin-top: 14px;
   align-items: start;
+  flex: 1;
+  min-height: 0;
 }
 
-/* --- [กรอบสีน้ำเงิน] กล่องใส่สัญลักษณ์แท็กยูทูปออโต้ของบอร์ดคอมมู --- */
 #ZeroTube .zt-video-frame {
   border-radius: 18px;
   overflow: hidden;
-  background: #111111;
+  background: #19364d;
 }
 
 #ZeroTube .zt-video-embed {
   display: block;
   width: 100%;
-  min-height: 248px;
+  min-height: clamp(214px, 22vw, 238px);
   border: 0;
+  background: #19364d;
 }
 
 #ZeroTube iframe.zt-video-embed {
-  height: 248px;
+  height: clamp(214px, 22vw, 238px);
 }
 
 #ZeroTube .zt-video-title {
   margin-top: 8px;
-  font-size: 16px;
-  line-height: 1.1;
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.08;
   font-weight: 700;
 }
 
@@ -375,8 +381,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: 12px;
 }
 
 #ZeroTube .zt-channel {
@@ -387,8 +393,8 @@
 }
 
 #ZeroTube .zt-channel-avatar {
-  width: 36px;
-  height: 36px;
+  width: clamp(30px, 2.8vw, 36px);
+  height: clamp(30px, 2.8vw, 36px);
   border-radius: 50%;
   background-image: var(--zt-channel-avatar, url("https://iili.io/Bi2aHB4.png"));
   background-size: cover;
@@ -397,20 +403,20 @@
 }
 
 #ZeroTube .zt-channel-name {
-  font-size: 13px;
+  font-size: clamp(11px, 1vw, 13px);
   line-height: 1;
   font-weight: 700;
 }
 
 #ZeroTube .zt-channel-sub {
   margin-top: 1px;
-  font-size: 9px;
+  font-size: clamp(7px, 0.68vw, 8px);
   line-height: 1.2;
   color: var(--zt-soft);
 }
 
 #ZeroTube .zt-pill-btn {
-  min-height: 26px;
+  min-height: 24px;
   padding: 0 10px;
   display: inline-flex;
   align-items: center;
@@ -419,17 +425,17 @@
   border-radius: 999px;
   background: #000000;
   color: #ffffff;
-  font: 600 10px/1 "Kanit", sans-serif;
-  transition: transform 0.1s ease;
+  font: 600 clamp(8px, 0.78vw, 9px)/1 "Kanit", sans-serif;
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 #ZeroTube .zt-pill-btn:active {
-  transform: scale(0.92);
+  transform: translateY(1px) scale(0.96);
 }
 
 #ZeroTube .zt-icon-btn-inline {
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   background-image: var(--icon);
   background-size: contain;
   background-repeat: no-repeat;
@@ -451,8 +457,9 @@
 #ZeroTube .zt-right-stage {
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 14px;
+  gap: 10px;
   min-width: 0;
+  height: 100%;
 }
 
 #ZeroTube .zt-section-title {
@@ -462,19 +469,17 @@
   letter-spacing: -0.8px;
 }
 
-/* --- [กรอบสีเหลือง] แผงปุ่มตัวกรองแท็ก ฟิกซ์เลื่อนสไลด์ซ้ายขวาได้ไม่ทะลุกรอบขอบนอกแน่นอน --- */
 #ZeroTube .zt-filters {
   margin-top: 10px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
   cursor: grab;
-  scrollbar-width: none; /* ซ่อนสกรอลบาร์เนื้อหาของเบราว์เซอร์ */
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
 
 #ZeroTube .zt-filters::-webkit-scrollbar {
-  display: none;
   width: 0;
   height: 0;
 }
@@ -488,22 +493,22 @@
   flex-wrap: nowrap;
   gap: 6px;
   min-width: max-content;
+  padding-right: 18px;
 }
 
 #ZeroTube .zt-filter-label {
-  padding: 6px 12px;
+  padding: 5px 9px;
   border: 1px solid var(--zt-stroke);
   border-radius: 999px;
   background: var(--zt-panel);
   color: var(--zt-text);
-  font-size: 10px;
+  font-size: 9px;
   line-height: 1;
   font-weight: 500;
   user-select: none;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 
-/* เงื่อนไขสัมพันธ์ระบบสลับฟิวเตอร์เมื่อมีการกดปุ่มฟิลเตอร์ */
 #zt-view-all:checked ~ #ZeroTube .zt-filter-label[for="zt-view-all"],
 #zt-tag-cover:checked ~ #ZeroTube .zt-filter-label[for="zt-tag-cover"],
 #zt-tag-event:checked ~ #ZeroTube .zt-filter-label[for="zt-tag-event"],
@@ -511,51 +516,56 @@
 #zt-tag-recommend:checked ~ #ZeroTube .zt-filter-label[for="zt-tag-recommend"],
 #zt-tag-previous:checked ~ #ZeroTube .zt-filter-label[for="zt-tag-previous"] {
   background: #000000;
-  color: #e4e4e4;
+  color: var(--zt-panel);
 }
 
-/* --- [กรอบสีส้ม] คลังอัลบั้มเพลงดีไซน์อนิเมชันไหลวนลูปต่อตูดไม่มีสิ้นสุด --- */
 #ZeroTube .zt-disc-wrap {
   margin-top: 10px;
-  overflow: hidden; /* ล็อกกรอบไม่ให้ออกนอกพื้นที่ควบคุม */
-  width: 100%;
-  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+#ZeroTube .zt-disc-wrap::-webkit-scrollbar,
+#ZeroTube .zt-info-box::-webkit-scrollbar,
+#ZeroTube .zt-about-box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 #ZeroTube .zt-disc-track {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   width: max-content;
   padding-bottom: 4px;
-  animation: zt-disc-marquee 25s linear infinite;
+  animation: zt-disc-marquee 20s linear infinite;
 }
 
-/* โฮเวอร์แล้วหยุดไหลสไลด์ทันทีตามที่กำหนด */
 #ZeroTube .zt-disc-wrap:hover .zt-disc-track {
   animation-play-state: paused;
 }
 
 #ZeroTube .zt-disc-card {
-  display: block;
   flex: 0 0 102px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s ease;
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
 
-/* ขยายตัวขึ้นนิดหน่อยเมื่อนำเมาส์ไปชี้ */
 #ZeroTube .zt-disc-card:hover {
-  transform: scale(1.06);
+  transform: translateY(-2px) scale(1.04);
 }
 
 #ZeroTube .zt-disc-card:active {
-  transform: scale(0.95);
+  transform: translateY(1px) scale(0.96);
 }
 
 #ZeroTube .zt-disc-thumb {
   width: 100%;
-  aspect-ratio: 1;
-  border-radius: 12px;
+  aspect-ratio: 1 / 1.1;
+  border-radius: 10px;
   background-image: var(--img);
   background-size: cover;
   background-position: center;
@@ -563,30 +573,29 @@
 }
 
 #ZeroTube .zt-disc-title {
-  margin-top: 6px;
-  font-size: 11px;
-  line-height: 1.1;
+  margin-top: 5px;
+  font-size: clamp(9px, 0.95vw, 11px);
+  line-height: 1.06;
   font-weight: 700;
 }
 
 #ZeroTube .zt-disc-sub {
   margin-top: 2px;
   color: var(--zt-soft);
-  font-size: 8px;
+  font-size: clamp(6px, 0.6vw, 7px);
   line-height: 1.2;
 }
 
-/* ระบบซ่อนรายการเพลงที่ไม่ตรงกลุ่มความต้องการแท็กผ่าน CSS Selector */
 #zt-tag-cover:checked ~ #ZeroTube .zt-disc-card:not(.is-cover),
 #zt-tag-event:checked ~ #ZeroTube .zt-disc-card:not(.is-event),
 #zt-tag-collab:checked ~ #ZeroTube .zt-disc-card:not(.is-collab),
 #zt-tag-recommend:checked ~ #ZeroTube .zt-disc-card:not(.is-recommend),
 #zt-tag-previous:checked ~ #ZeroTube .zt-disc-card:not(.is-previous) {
-  display: none !important;
+  display: none;
 }
 
 #ZeroTube .zt-favorite-title {
-  margin-top: 16px;
+  margin-top: 0;
   font-size: var(--zt-favorite-title-size);
   line-height: 0.95;
   font-weight: 800;
@@ -596,37 +605,35 @@
   margin-top: 10px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 46px;
-  gap: 10px;
+  gap: 14px 10px;
   align-items: center;
 }
 
-/* --- [กรอบสีดำ] แถวกลุ่มข้อมูลเพลงโปรด มัดรวมกลุ่มครบเซ็ต กดแล้วยุบตามสั่ง --- */
 #ZeroTube .zt-favorite-song {
   display: flex;
   align-items: center;
   gap: 10px;
   min-height: 54px;
-  padding: 4px;
+  padding: 2px 0;
   min-width: 0;
   text-decoration: none;
   color: inherit;
-  border-radius: var(--zt-radius-md);
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 #ZeroTube .zt-favorite-song:hover {
-  transform: scale(1.02);
+  transform: translateY(-1px) scale(1.02);
 }
 
 #ZeroTube .zt-favorite-song:active {
-  transform: scale(0.97);
+  transform: translateY(1px) scale(0.97);
 }
 
 #ZeroTube .zt-favorite-cover {
-  width: 48px;
-  height: 48px;
-  flex: 0 0 48px;
-  border-radius: 10px;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border-radius: 12px;
   background-image: var(--img);
   background-size: cover;
   background-position: center;
@@ -638,22 +645,21 @@
 }
 
 #ZeroTube .zt-favorite-name {
-  font-size: 13px;
-  line-height: 1.1;
+  font-size: clamp(11px, 1vw, 13px);
+  line-height: 1.06;
   font-weight: 700;
 }
 
 #ZeroTube .zt-favorite-artist {
   margin-top: 2px;
   color: var(--zt-soft);
-  font-size: 9px;
+  font-size: clamp(7px, 0.74vw, 9px);
   line-height: 1.2;
 }
 
-/* ปุ่มเพลย์การ์ดสีดำกลมๆ */
 #ZeroTube .zt-fav-play {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -661,25 +667,32 @@
   border-radius: 50%;
   background: #000000;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.1s ease;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
 }
 
 #ZeroTube .zt-fav-play-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background-image: var(--zt-play-card-icon);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
+#ZeroTube .zt-fav-play:hover {
+  transform: translateY(-2px) scale(1.08);
+}
+
 #ZeroTube .zt-fav-play:active {
-  transform: scale(0.85);
+  transform: translateY(1px) scale(0.94);
 }
 
 #ZeroTube .zt-right-card {
   padding: 18px 16px 18px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #ZeroTube .zt-playing-head {
@@ -689,7 +702,7 @@
 }
 
 #ZeroTube .zt-playing-title {
-  font-size: 22px;
+  font-size: clamp(18px, 1.7vw, 22px);
   line-height: 1;
   font-weight: 700;
 }
@@ -702,7 +715,7 @@
 
 #ZeroTube .zt-playing-cover {
   margin-top: 10px;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1.02;
   border-radius: 14px;
   background-image: var(--zt-right-cover, url("https://iili.io/B6NUR4f.jpg"));
   background-color: #cfd8dc;
@@ -713,14 +726,14 @@
 
 #ZeroTube .zt-playing-song {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: clamp(15px, 1.35vw, 18px);
   line-height: 1.08;
   font-weight: 700;
 }
 
 #ZeroTube .zt-playing-artist {
   margin-top: 2px;
-  font-size: 11px;
+  font-size: clamp(8px, 0.8vw, 10px);
   color: var(--zt-soft);
 }
 
@@ -729,17 +742,19 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 9px;
+  font-size: clamp(7px, 0.7vw, 8px);
   line-height: 1;
   font-weight: 700;
 }
 
-#ZeroTube .zt-time-row > :first-child,
+#ZeroTube .zt-time-row > :first-child {
+  flex: 0 0 auto;
+}
+
 #ZeroTube .zt-time-row > :last-child {
   flex: 0 0 auto;
 }
 
-/* คลื่นเสียงออโต้บาร์ดุ๊กดิ๊กด้านล่าง */
 #ZeroTube .zt-bars {
   flex: 1;
   display: flex;
@@ -771,6 +786,10 @@
 #ZeroTube .zt-bars span:nth-child(12) { height: 12px; }
 #ZeroTube .zt-bars span:nth-child(13) { height: 9px; }
 #ZeroTube .zt-bars span:nth-child(14) { height: 14px; }
+#ZeroTube .zt-bars span:nth-child(15) { height: 7px; }
+#ZeroTube .zt-bars span:nth-child(16) { height: 12px; }
+#ZeroTube .zt-bars span:nth-child(17) { height: 8px; }
+#ZeroTube .zt-bars span:nth-child(18) { height: 10px; }
 
 #ZeroTube .zt-player-controls {
   margin-top: 10px;
@@ -780,7 +799,6 @@
   align-items: center;
 }
 
-/* แป้นควบคุมเพลงฝั่งชมพูแบบกดแล้วขยับตอบรับน้ำหนักนิ้ว/เมาส์ */
 #ZeroTube .zt-player-control {
   width: 100%;
   height: 28px;
@@ -790,7 +808,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.1s ease;
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
 
 #ZeroTube .zt-player-control-icon {
@@ -809,7 +827,7 @@
   justify-self: center;
   border-radius: 50%;
   background: #000000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
 #ZeroTube .zt-player-control.is-main .zt-player-control-icon {
@@ -824,12 +842,16 @@
   object-fit: contain;
 }
 
+#ZeroTube .zt-player-control:hover {
+  transform: translateY(-1px) scale(1.04);
+}
+
 #ZeroTube .zt-player-control:active {
-  transform: scale(0.88);
+  transform: translateY(1px) scale(0.94);
 }
 
 #ZeroTube .zt-about-title {
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: var(--zt-about-title-size);
   line-height: 1.1;
   font-weight: 700;
@@ -847,42 +869,106 @@
   line-height: 1.5;
 }
 
-/* บล็อกตัวหนังสือลอยพาร์ทล่างปิดการมองเห็นชั่วคราวตามฟอร์แมตกระชับ */
-#ZeroTube .zt-floating-text {
-  display: none;
-}
-
 @keyframes zt-bars {
   0%, 100% { transform: scaleY(0.7); opacity: 0.8; }
-  50% { transform: scaleY(1.2); opacity: 1; }
+  50% { transform: scaleY(1.15); opacity: 1; }
 }
 
 @keyframes zt-disc-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @keyframes zt-outline-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @keyframes zt-outline-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
-/* Responsive สำหรับขนาดหน้าจอต่างๆ */
-@media (max-width: 980px) {
-  #ZeroTube .zt-layout {
-    grid-template-columns: 1fr;
+@media (min-width: 1500px) {
+  #ZeroTube {
+    --zt-width: 1240px;
+    --zt-card-height: 560px;
   }
+
   #ZeroTube .zt-left-card,
   #ZeroTube .zt-main-panel,
   #ZeroTube .zt-right-card {
-    min-height: 0;
+    height: var(--zt-card-height);
   }
+}
+
+@media (max-width: 1180px) {
+  #ZeroTube {
+    --zt-width: 100%;
+    --zt-col-left: 0.76fr;
+    --zt-col-middle: 1.7fr;
+    --zt-col-right: 0.8fr;
+  }
+}
+
+@media (max-width: 980px) {
+  #ZeroTube {
+    --zt-card-height: auto;
+    --zt-gap: 14px;
+  }
+
+  #ZeroTube .zt-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #ZeroTube .zt-left-card,
+  #ZeroTube .zt-main-panel,
+  #ZeroTube .zt-right-card {
+    height: auto;
+  }
+
   #ZeroTube .zt-main-grid {
     grid-template-columns: 1fr;
+  }
+
+  #ZeroTube .zt-left-card {
+    min-height: 500px;
+  }
+
+  #ZeroTube .zt-right-card {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  #ZeroTube {
+    --zt-gap: 12px;
+    --zt-favorite-title-size: 26px;
+    --zt-section-title-size: 34px;
+  }
+
+  #ZeroTube .zt-main-panel {
+    padding: 14px;
+  }
+
+  #ZeroTube .zt-left-card,
+  #ZeroTube .zt-right-card {
+    min-height: 0;
+  }
+
+  #ZeroTube .zt-left-heading {
+    font-size: 28px;
+  }
+
+  #ZeroTube .zt-outline-line {
+    font-size: 54px;
+  }
+
+  #ZeroTube .zt-outline-stack .zt-outline-line:nth-child(3) {
+    font-size: 42px;
+  }
+
+  #ZeroTube .zt-contact-pill {
+    bottom: 94px;
   }
 }
