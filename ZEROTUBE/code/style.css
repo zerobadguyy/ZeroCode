@@ -659,40 +659,6 @@ margin-top: 2px;
   line-height: 1.2;
 }
 
-#ZeroTube .zt-fav-play {
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
-  border-radius: 50%;
-  background: #000000;
-  text-decoration: none;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
-  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
-  display: inline-flex;
-  position: relative;
-}
-
-#ZeroTube .zt-fav-play-icon {
-  display: block !important;
-  width: 18px !important; 
-  height: 18px !important;
-  background-image: url('https://iili.io/CHNmR1f.png') !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-}
-
-#ZeroTube .zt-fav-play:hover {
-  transform: translateY(-2px) scale(1.08);
-}
-
-#ZeroTube .zt-fav-play:active {
-  transform: translateY(1px) scale(0.94);
-}
-
 #ZeroTube .zt-right-card {
   padding: 18px 16px 18px;
   max-width: 100%;
