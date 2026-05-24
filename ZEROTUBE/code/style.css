@@ -671,12 +671,14 @@ margin-top: 2px;
   text-decoration: none;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
   transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  display: inline-flex;
+  position: relative;
 }
 
 #ZeroTube .zt-fav-play-icon {
   width: 18px;
   height: 18px;
-  background-image: var(--zt-play-card-icon);
+  background-image: url('https://iili.io/CHNmR1f.png') !important;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
