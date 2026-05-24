@@ -604,9 +604,11 @@
 #ZeroTube .zt-favorite-list {
   margin-top: 10px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 46px;
+  grid-template-columns: max-content 46px;
+  grid-template-columns: 220px 46px;
   gap: 8px 10px;
   align-items: center;
+  justify-content: start;
 }
 
 #ZeroTube .zt-favorite-song {
