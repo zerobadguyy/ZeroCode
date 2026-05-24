@@ -874,6 +874,27 @@ margin-top: 2px;
   line-height: 1.5;
 }
 
+#ZeroTube .zt-player,
+#ZeroTube .zt-video-container,
+#ZeroTube .zt-video-wrapper {
+  position: relative !important;
+  overflow: hidden;
+}
+
+/* 2. สั่งให้ตัววิดีโอ YouTube ข้างใน วิ่งไปกางปีกยึดพื้นที่เต็ม 4 มุมกล่องทันที */
+#ZeroTube .zt-player iframe,
+#ZeroTube .zt-video-container iframe,
+#ZeroTube .zt-video-wrapper iframe,
+#ZeroTube iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block !important;
+}
+
 @keyframes zt-bars {
   0%, 100% { transform: scaleY(0.7); opacity: 0.8; }
   50% { transform: scaleY(1.15); opacity: 1; }
@@ -976,25 +997,5 @@ margin-top: 2px;
   #ZeroTube .zt-contact-pill {
     bottom: 94px;
   }
-
-  /* 🌟 สั่งให้ iframe หรือตัววิดีโอ YouTube ขยายร่างเต็มกล่อง 100% */
-#ZeroTube iframe,
-#ZeroTube video,
-#ZeroTube .zt-player iframe {
-  width: 100% !important;
-  height: 100% !important;
-  border: 0 !important;
-  display: block;
-}
-
-/* 🌟 แถมให้! ล็อกสัดส่วนกล่องวิดีโอให้เป็น 16:9 แบบโรงภาพยนตร์ ไม่บิดเบี้ยว */
-#ZeroTube .zt-video-container,
-#ZeroTube .zt-player,
-#ZeroTube .zt-video-wrapper {
-  width: 100% !important;
-  aspect-ratio: 16 / 9 !important; /* สัดส่วนหน้าจอมาตรฐานยอดฮิต */
-  min-height: auto !important;
-  overflow: hidden;
-}
 
 }
