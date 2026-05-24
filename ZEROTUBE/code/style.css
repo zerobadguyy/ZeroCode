@@ -488,10 +488,11 @@
 }
 
 #ZeroTube .zt-filter-list {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap !important;      
   gap: 6px 6px;                     
-  min-width: 100% !important;      
+  min-width: 0 !important;      
+  width: 100%;
   padding-right: 0;                 
 }
 
