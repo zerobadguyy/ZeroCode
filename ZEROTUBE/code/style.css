@@ -818,14 +818,14 @@
   display: flex !important;
   justify-content: center !important;   /* บังคับให้อยู่ตรงกลางกล่องบนคอม */
   align-items: center !important;
-  gap: 6px !important;                  /* บีบระยะห่างปุ่มให้พอดีกับคอลัมน์คอม */
+  gap: 2px !important;                  /* บีบระยะห่างปุ่มให้พอดีกับคอลัมน์คอม */
   width: 100% !important;
   flex-shrink: 0;
 }
 
 #ZeroTube .zt-player-control {
-  width: 34px !important;               /* ขนาดที่พอดี ไม่ล้นขอบคอม */
-  height: 34px !important;
+  width: 38px !important;               /* ขนาดที่พอดี ไม่ล้นขอบคอม */
+  height: 38px !important;
   border: 0;
   border-radius: 10px !important;
   background: transparent;
@@ -948,7 +948,7 @@
   /* 🖼️ แก้ไขบั๊กรูปหายบนมือถือ: บังคับความกว้างไม่ให้หดเหลือ 0px */
   #ZeroTube .zt-playing-cover {
     width: 100% !important;
-    max-width: 260px !important;       /* คุมขนาดรูปปกให้ออกมาสวยงามบนมือถือ */
+    max-width: 560px !important;       /* คุมขนาดรูปปกให้ออกมาสวยงามบนมือถือ */
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -990,7 +990,7 @@
     justify-content: center !important;
     align-items: center !important;
     flex-grow: 0 !important;
-    transform: scale(1.3) !important;   /* พลังขยายคลื่นเสียงให้ตัวโตขึ้น 1.3 เท่าแบบสมดุล */
+    transform: scale(2) !important;   /* พลังขยายคลื่นเสียงให้ตัวโตขึ้น 1.3 เท่าแบบสมดุล */
     margin: 0 12px !important;            
   }
 
