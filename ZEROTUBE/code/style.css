@@ -979,10 +979,10 @@
     justify-content: center !important; 
     align-items: center !important;
     gap: 16px !important;               
-    font-size: 60px !important;         /* ขนาดตัวเลขเวลาเด่นชัดกำลังดี */
+    font-size: 45px !important;         /* ขนาดตัวเลขเวลาเด่นชัดกำลังดี */
     width: 100% !important;
-    max-width: 300px !important;
-    margin: 300px auto !important;
+    max-width: 100% !important;
+    margin: 600px auto !important;
   }
 
   #ZeroTube .zt-bars {
