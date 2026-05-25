@@ -979,7 +979,7 @@
     justify-content: center !important; 
     align-items: center !important;
     gap: 16px !important;               
-    font-size: 45px !important;         /* ขนาดตัวเลขเวลาเด่นชัดกำลังดี */
+    font-size: 30px !important;         /* ขนาดตัวเลขเวลาเด่นชัดกำลังดี */
     width: 100% !important;
     max-width: 300px !important;
     margin: 500px auto !important;
