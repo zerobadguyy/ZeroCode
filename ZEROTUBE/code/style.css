@@ -937,6 +937,12 @@
     --zt-gap: 14px;
   }
 
+#ZeroTube .zt-layout { grid-template-columns: 1fr; }
+  #ZeroTube .zt-left-card, #ZeroTube .zt-main-panel, #ZeroTube .zt-right-card { height: auto; }
+  #ZeroTube .zt-main-grid { grid-template-columns: 1fr; }
+
+}
+
   #ZeroTube .zt-layout { grid-template-columns: 1fr; }
   #ZeroTube .zt-left-card, #ZeroTube .zt-main-panel, #ZeroTube .zt-right-card { height: auto; }
   #ZeroTube .zt-main-grid { grid-template-columns: 1fr; }
