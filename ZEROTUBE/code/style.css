@@ -118,8 +118,8 @@
 
 #ZeroTube .zt-outline-stack {
   position: absolute;
-  top: 50%; /* แก้ไขให้จัดกึ่งกลางแนวตั้ง */
-  transform: translateY(-50%); /* แก้ไขให้จัดกึ่งกลางแนวตั้ง */
+  top: 50%; 
+  transform: translateY(-50%); 
   left: -4px;
   right: -12px;
   display: grid;
@@ -811,21 +811,17 @@
   border-radius: inherit !important; 
 }
 
-/* =========================================================
-   🔘 ส่วนควบคุมปุ่มกดสำหรับหน้าจอคอมพิวเตอร์ (Desktop Default)
-   ========================================================= */
 #ZeroTube .zt-player-controls {
   margin-top: 12px;
   display: flex !important;
-  justify-content: center !important;   /* บังคับให้อยู่ตรงกลางกล่องบนคอม */
+  justify-content: center !important;   
   align-items: center !important;
-  gap: 2px !important;                  /* บีบระยะห่างปุ่มให้พอดีกับคอลัมน์คอม */
-  width: 100% !important;
+  gap: 2px !important;                  
   flex-shrink: 0;
 }
 
 #ZeroTube .zt-player-control {
-  width: 38px !important;               /* ขนาดที่พอดี ไม่ล้นขอบคอม */
+  width: 38px !important;               
   height: 38px !important;
   border: 0;
   border-radius: 10px !important;
@@ -848,7 +844,7 @@
 
 /* ปุ่มเล่น/หยุดหลักตรงกลางบนคอม */
 #ZeroTube .zt-player-control.is-main {
-  width: 50px !important;               /* ขนาดปุ่มเล่นหลักที่พอดีขอบคอม */
+  width: 50px !important;               
   height: 50px !important;
   justify-self: center;
   border-radius: 50% !important;
@@ -898,9 +894,6 @@
 @keyframes zt-outline-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes zt-outline-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-/* =========================================================
-   🖥️ [Responsive] สำหรับหน้าจอขนาดใหญ่พิเศษ (1500px ขึ้นไป)
-   ========================================================= */
 @media (min-width: 1500px) {
   #ZeroTube {
     --zt-width: 1240px;
@@ -913,9 +906,6 @@
   }
 }
 
-/* =========================================================
-   💻 [Responsive] สำหรับหน้าจอขนาดกลาง (ไม่เกิน 1180px)
-   ========================================================= */
 @media (max-width: 1180px) {
   #ZeroTube {
     --zt-width: 100%;
@@ -925,9 +915,6 @@
   }
 }
 
-/* =========================================================
-   📱 [Responsive] สำหรับหน้าจอมือถือ / แท็บเล็ต (ไม่เกิน 980px)
-   ========================================================= */
 @media (max-width: 980px) {
   #ZeroTube {
     --zt-card-height: auto;
@@ -943,10 +930,9 @@
     min-height: 0;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;   /* จัดโครงสร้างรวมของกล่องขวาให้อยู่ตรงกลาง */
+    align-items: center !important; 
   }
 
-  /* 📌 จัดระเบียบหัวข้อกล่องขวาบนมือถือไม่ให้ลอยมาตรงกลางตามการจัดของตัวแม่ */
   #ZeroTube .zt-playing-head {
     width: 100% !important;
   }
@@ -961,15 +947,13 @@
     width: 100% !important;
   }
 
-  /* 🖼️ แก้ไขบั๊กรูปหายบนมือถือ: บังคับความกว้างไม่ให้หดเหลือ 0px */
   #ZeroTube .zt-playing-cover {
     width: 100% !important;
-    max-width: 800px !important;       /* คุมขนาดรูปปกให้ออกมาสวยงามบนมือถือ */
+    max-width: 800px !important;      
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  /* 🎵 จัดการข้อความชื่อเพลงและคนร้องบนมือถือ ให้จัดกึ่งกลางสวยงาม */
   #ZeroTube .zt-playing-song,
   #ZeroTube .zt-playing-artist {
     text-align: center !important;
@@ -989,13 +973,12 @@
     font-size: 14px !important;        
   }
   
-  /* ⏳ ขยายและจัดการแถบเวลา Music Bar ให้ใหญ่เบิ้มสมดุลบนมือถือ */
   #ZeroTube .zt-time-row {
     display: flex !important;
     justify-content: center !important; 
     align-items: center !important;
     gap: 0px !important;               
-    font-size: 0px !important;         /* ขนาดตัวเลขเวลาเด่นชัดกำลังดี */
+    font-size: 0px !important;        
     width: 100% !important;
     max-width: 0px !important;
     margin: 0px auto !important;
@@ -1006,11 +989,10 @@
     justify-content: center !important;
     align-items: center !important;
     flex-grow: 0 !important;
-    transform: scale(2.6) !important;   /* พลังขยายคลื่นเสียงให้ตัวโตขึ้น 1.3 เท่าแบบสมดุล */
+    transform: scale(2.6) !important; 
     margin: 0 12px !important;            
   }
 
-  /* 🔘 ขยายแก๊ง 4 จตุรเทพ + ปุ่มหลักให้ใหญ่สะใจ จิ้มง่ายเต็มมือถือ */
   #ZeroTube .zt-player-controls {
     width: 100% !important;
     max-width: 290px !important;        
@@ -1040,9 +1022,6 @@
   }
 }
 
-/* =========================================================
-   📳 [Responsive] สำหรับหน้าจอมือถือขนาดเล็ก (ไม่เกิน 640px)
-   ========================================================= */
 @media (max-width: 640px) {
   #ZeroTube {
     --zt-gap: 12px;
