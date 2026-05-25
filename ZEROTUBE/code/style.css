@@ -230,6 +230,11 @@
   background: #5865F2; 
 }
 
+#ZeroTube .zt-side-link {
+  width: auto !important;
+  min-width: 130px;
+}
+
 #ZeroTube .zt-side-link:active {
   transform: scale(0.94);
 }
