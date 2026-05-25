@@ -978,11 +978,11 @@
     display: flex !important;
     justify-content: center !important; 
     align-items: center !important;
-    gap: 30px !important;               
-    font-size: 24px !important;         /* ขนาดตัวเลขเวลาเด่นชัดกำลังดี */
+    gap: 60px !important;               
+    font-size: 16px !important;         /* ขนาดตัวเลขเวลาเด่นชัดกำลังดี */
     width: 100% !important;
-    max-width: 300px !important;
-    margin: 18px auto !important;
+    max-width: 100% !important;
+    margin: 30px auto !important;
   }
 
   #ZeroTube .zt-bars {
