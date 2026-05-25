@@ -118,7 +118,8 @@
 
 #ZeroTube .zt-outline-stack {
   position: absolute;
-  top: 128px;
+  top: 50%; /* แก้ไขให้จัดกึ่งกลางแนวตั้ง */
+  transform: translateY(-50%); /* แก้ไขให้จัดกึ่งกลางแนวตั้ง */
   left: -4px;
   right: -12px;
   display: grid;
@@ -943,6 +944,21 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;   /* จัดโครงสร้างรวมของกล่องขวาให้อยู่ตรงกลาง */
+  }
+
+  /* 📌 จัดระเบียบหัวข้อกล่องขวาบนมือถือไม่ให้ลอยมาตรงกลางตามการจัดของตัวแม่ */
+  #ZeroTube .zt-playing-head {
+    width: 100% !important;
+  }
+
+  #ZeroTube .zt-about-title {
+    align-self: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+
+  #ZeroTube .zt-about-box {
+    width: 100% !important;
   }
 
   /* 🖼️ แก้ไขบั๊กรูปหายบนมือถือ: บังคับความกว้างไม่ให้หดเหลือ 0px */
