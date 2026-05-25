@@ -1099,8 +1099,8 @@ margin-top: 2px;
 
   /* 🔘 ปรับขนาดปุ่มควบคุมเครื่องเล่นเพลงตามที่เธอต้องการ */
   #ZeroTube .zt-player-control {
-    width: 44px !important;
-    height: 44px !important;
+    width: 100px !important;
+    height: 100px !important;
     border-radius: 12px !important;
   }
 
