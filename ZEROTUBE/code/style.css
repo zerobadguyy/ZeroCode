@@ -978,7 +978,7 @@
     display: flex !important;
     justify-content: center !important; 
     align-items: center !important;
-    gap: 160px !important;               
+    gap: 300px !important;               
     font-size: 24px !important;         /* ขนาดตัวเลขเวลาเด่นชัดกำลังดี */
     width: 100% !important;
     max-width: 300px !important;
