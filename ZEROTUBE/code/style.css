@@ -235,6 +235,17 @@
   min-width: 130px;
 }
 
+#ZeroTube .zt-side-link:hover .zt-side-link-text {
+  font-size: 0 !important;
+}
+
+#ZeroTube .zt-side-link:hover .zt-side-link-text::after {
+  content: attr(data-hover);
+  font-size: 11px !important; 
+  font-weight: 700;
+  display: inline-block;
+}
+
 #ZeroTube .zt-side-link:active {
   transform: scale(0.94);
 }
