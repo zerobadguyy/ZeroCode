@@ -851,8 +851,8 @@ margin-top: 2px;
 }
 
 #ZeroTube .zt-player-control.is-main {
-  width: 50px;
-  height: 50px;
+  width: 34px;
+  height: 34px;
   justify-self: center;
   border-radius: 50%;
   border: 0;
@@ -932,95 +932,8 @@ margin-top: 2px;
   }
 }
 
-@media (max-width: 1180px) {
-  #ZeroTube {
-    --zt-width: 100%;
-    --zt-col-left: 0.76fr;
-    --zt-col-middle: 1.7fr;
-    --zt-col-right: 0.8fr;
-  }
-}
-
-@media (max-width: 980px) {
-  #ZeroTube {
-    --zt-card-height: auto;
-    --zt-gap: 14px;
-  }
-
-  #ZeroTube .zt-layout {
-    grid-template-columns: 1fr;
-  }
-
-  #ZeroTube .zt-left-card,
-  #ZeroTube .zt-main-panel,
-  #ZeroTube .zt-right-card {
-    height: auto;
-  }
-
-  #ZeroTube .zt-main-grid {
-    grid-template-columns: 1fr;
-  }
-
-  #ZeroTube .zt-left-card {
-    min-height: 500px;
-  }
-
-  #ZeroTube .zt-right-card {
-    min-height: 0;
-  }
-}
-
-@media (max-width: 640px) {
-  #ZeroTube {
-    --zt-gap: 12px;
-    --zt-favorite-title-size: 26px;
-    --zt-section-title-size: 34px;
-  }
-
-  #ZeroTube .zt-main-panel {
-    padding: 14px;
-  }
-
-  #ZeroTube .zt-left-card,
-  #ZeroTube .zt-right-card {
-    min-height: 0;
-  }
-
-  #ZeroTube .zt-left-heading {
-    font-size: 28px;
-  }
-
-  #ZeroTube .zt-outline-line {
-    font-size: 54px;
-  }
-
-  #ZeroTube .zt-outline-stack .zt-outline-line:nth-child(3) {
-    font-size: 42px;
-  }
-
-  #ZeroTube .zt-contact-pill {
-    bottom: 94px;
-  }
-}
-
 /* =========================================================
-   🖥️ สำหรับหน้าจอขนาดใหญ่พิเศษ (1500px ขึ้นไป)
-   ========================================================= */
-@media (min-width: 1500px) {
-  #ZeroTube {
-    --zt-width: 1240px;
-    --zt-card-height: 560px;
-  }
-
-  #ZeroTube .zt-left-card,
-  #ZeroTube .zt-main-panel,
-  #ZeroTube .zt-right-card {
-    height: var(--zt-card-height);
-  }
-}
-
-/* =========================================================
-   💻 สำหรับหน้าจอขนาดกลาง (ไม่เกิน 1180px)
+   💻 [Responsive] สำหรับหน้าจอขนาดกลาง (ไม่เกิน 1180px)
    ========================================================= */
 @media (max-width: 1180px) {
   #ZeroTube {
@@ -1032,7 +945,7 @@ margin-top: 2px;
 }
 
 /* =========================================================
-   📱 สำหรับหน้าจอแท็บเล็ต / หน้าจอเล็กลง (ไม่เกิน 980px)
+   📱 [Responsive] สำหรับหน้าจอแท็บเล็ต / หน้าจอเล็กลง (ไม่เกิน 980px)
    ========================================================= */
 @media (max-width: 980px) {
   #ZeroTube {
@@ -1060,33 +973,40 @@ margin-top: 2px;
 
   #ZeroTube .zt-right-card {
     min-height: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;     /* บังคับให้โครงสร้างในกล่องขวาจัดกึ่งกลางทั้งหมด */
   }
 
+  /* 🎵 จัดการข้อความชื่อเพลงและคนร้องบนมือถือ ให้ใหญ่และอยู่ตรงกลาง */
   #ZeroTube .zt-playing-song,
   #ZeroTube .zt-playing-artist {
     text-align: center !important;
     width: 100% !important;
     display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   #ZeroTube .zt-playing-song {
-    font-size: 20px !important; 
-    margin-top: 14px !important;
-    margin-bottom: 4px !important;
+    font-size: 20px !important;         /* ล็อกขนาดตอนอยู่บนมือถือ ไม่ให้หดเล็กตามคอม */
+    margin-top: 16px !important;
+    margin-bottom: 6px !important;
   }
 
   #ZeroTube .zt-playing-artist {
-    font-size: 14px !important;
+    font-size: 14px !important;         /* ปรับขนาดคนร้องให้สมดุลอ่านง่าย */
   }
   
+  /* ⏳ จัดการแถบเวลา Music Bar (1:54 - bars - 3:35) ให้กึ่งกลางและชัดเจน */
   #ZeroTube .zt-time-row {
     display: flex !important;
     justify-content: center !important; 
     align-items: center !important;
     gap: 12px !important;               
-    font-size: 13px !important;          
+    font-size: 14px !important;         /* เพิ่มขนาดตัวเลขเวลาบนมือถือ */ 
     width: 100% !important;
-    margin: 12px auto !important;
+    margin: 16px auto !important;
   }
 
   #ZeroTube .zt-bars {
@@ -1094,35 +1014,41 @@ margin-top: 2px;
     justify-content: center !important;
     align-items: center !important;
     flex-grow: 0 !important;
-    width: 75px !important;          
+    width: 80px !important;             /* ขยายความกว้างของแท่งเสียงวิ่ง ๆ */
   }
 
-  /* 🔘 ปรับขนาดปุ่มควบคุมเครื่องเล่นเพลงตามที่เธอต้องการ */
+  /* 🔘 ปรับระยะห่างของแก๊งปุ่มควบคุมบนมือถือไม่ให้กระจายหลุดขอบ */
+  #ZeroTube .zt-player-controls {
+    width: 100% !important;
+    max-width: 290px !important;        /* คุมความกว้างกลุ่มปุ่มให้อยู่ตรงกลางสวยงาม */
+    margin: 12px auto 0 !important;
+    justify-content: space-between !important;
+  }
+
   #ZeroTube .zt-player-control {
-    width: 100px !important;
-    height: 100px !important;
-    border-radius: 12px !important;
+    width: 48px !important;             /* ขยายขนาดปุ่มบนมือถือเพิ่มอีกนิดเพื่อให้ใช้นิ้วจิ้มง่าย */
+    height: 48px !important;
+    border-radius: 14px !important;
   }
 
   #ZeroTube .zt-player-control-icon {
-    width: 28px !important;  
-    height: 28px !important;
+    width: 32px !important;  
+    height: 32px !important;
   }
 
-  /* ปุ่มเล่น/หยุดหลักตรงกลาง */
   #ZeroTube .zt-player-control.is-main {
-    width: 58px !important;
-    height: 58px !important;
+    width: 66px !important;
+    height: 66px !important;
   }
 
   #ZeroTube .zt-player-control.is-main .zt-player-control-icon {
-    width: 36px !important; 
-    height: 36px !important;
+    width: 44px !important; 
+    height: 44px !important;
   }
 }
 
 /* =========================================================
-   📳 สำหรับหน้าจอมือถือขนาดเล็ก (ไม่เกิน 640px)
+   📳 [Responsive] สำหรับหน้าจอมือถือขนาดเล็ก (ไม่เกิน 640px)
    ========================================================= */
 @media (max-width: 640px) {
   #ZeroTube {
